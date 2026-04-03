@@ -24,11 +24,7 @@ async function fetchCategoryJokes(req, res) {
             if (limitParam !== undefined) {
                 parsedLimit = parseInt(limitParam, 10);
             }
-<<<<<<< HEAD
             const jokes = await model.getJokesByCategory(validCategory.id, parsedLimit);
-=======
-            const jokes = await model.getJokesByCategory(category, parsedLimit);
->>>>>>> bfc018d (Feat: implemented assignment specifications)
             res.json(jokes);
         } catch (err) {
             console.error(err);
@@ -58,11 +54,7 @@ async function createJoke(req, res) {
                 return res.status(404).send("Category '" + category + "' does not exist in the jokebook");
             }
             await model.addJoke(validCategory.id, setup, delivery);
-<<<<<<< HEAD
             const jokes = await model.getJokesByCategory(validCategory.id);
-=======
-            const jokes = await model.getJokesByCategory(category);
->>>>>>> bfc018d (Feat: implemented assignment specifications)
             res.status(201).json(jokes);
         } catch (err) {
             console.error(err);
