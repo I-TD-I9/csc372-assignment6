@@ -1,6 +1,10 @@
 "use strict";
 const model = require("../models/jokebookModel");
 
+function renderHome(req, res) {
+    res.render("index", { title: "jokebook" });
+}
+
 async function fetchCategories(req, res) {
     try {
         const categories = await model.getCategories();
@@ -66,6 +70,7 @@ async function createJoke(req, res) {
 }
 
 module.exports = {
+    renderHome,
     fetchCategories,
     fetchCategoryJokes,
     fetchRandomJoke,

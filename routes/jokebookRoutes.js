@@ -5,6 +5,7 @@ const controller = require("../controllers/jokebookController");
 
 const router = express.Router();
 
+router.get("/", controller.renderHome);
 router.get("/categories", controller.fetchCategories);
 router.get("/category/:category", controller.fetchCategoryJokes);
 router.get("/random", controller.fetchRandomJoke);
