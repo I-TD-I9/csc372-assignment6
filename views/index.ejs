@@ -1,0 +1,56 @@
+<%- include('./partials/head', { title: title }) %>
+<body>
+    <%- include('./partials/nav') %>
+    <main class="page">
+        <section class="panel">
+            <h1>Jokebook</h1>
+        </section>
+
+        <section class="panel">
+            <div class="section-header">
+                <h2>Random Joke</h2>
+            </div>
+            <div id="random-joke" class="joke-card">
+                <p>Loading...</p>
+            </div>
+        </section>
+
+        <section class="panel">
+            <div class="section-header">
+                <h2>Categories</h2>
+                <button id="load-categories" type="button">Show Categories</button>
+            </div>
+            <div id="categories" class="category-list"></div>
+        </section>
+
+        <section class="panel">
+            <h2>Search By Category</h2>
+            <form id="category-form" class="stack-form">
+                <label for="category-search">Category name</label>
+                <input id="category-search" name="category" type="text" placeholder="funnyJoke" required>
+                <button type="submit">View Jokes</button>
+            </form>
+        </section>
+
+        <section class="panel">
+            <h2>Results</h2>
+            <p id="status-message" class="status-message"></p>
+            <div id="joke-results" class="joke-list"></div>
+        </section>
+
+        <section class="panel">
+            <h2>Add A Joke</h2>
+            <form id="new-joke-form" class="stack-form">
+                <label for="new-category">Category</label>
+                <input id="new-category" name="category" type="text" placeholder="funnyJoke" required>
+                <label for="new-setup">Setup</label>
+                <textarea id="new-setup" name="setup" rows="2" required></textarea>
+                <label for="new-delivery">Delivery</label>
+                <textarea id="new-delivery" name="delivery" rows="2" required></textarea>
+                <button type="submit">Save Joke</button>
+            </form>
+        </section>
+    </main>
+    <script src="/script.js" defer></script>
+</body>
+</html>
